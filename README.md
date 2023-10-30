@@ -32,9 +32,8 @@ For the endpoints that takes <code>`List<Filter>`</code> as parameter, you can c
       ..
   }
   </code>
-  The SDK is created using Visual Studio. The solution file is  LotrSDK/LotrSDK.sln which opens both the SDK project(a class library named as "LotrSDK") and Integration Test Project.
-  To use the SDK you need to  reference the LotrSDK class library. The Integration Test Project("LotrSDKClientTests") references it and contains the tests for the methods of 
-  the SDK project . 
+
+  The SDK is created using Visual Studio 2022. The solution file is  LotrSDK/LotrSDK.sln which opens both the SDK project(a class library named as "LotrSDK") and Integration Test Project("LotrSDKTests").
 
 ## Instructions:
 
