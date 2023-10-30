@@ -6,14 +6,14 @@ namespace LotrSDK.Helpers
 {
     public class Utils
     {
-        public static void ApplyPaginationParamsToRequest(RestRequest request, int? page, int? offset, int? pageSize)
+        public static void ApplyPaginationParamsToRequest(RestRequest request, int? page, int? offset, int? limit)
         {
             if (page.HasValue)
                 request.AddParameter("page", page.Value);
             if (offset.HasValue)
                 request.AddParameter("offset", offset.Value);
-            if (pageSize.HasValue)
-                request.AddParameter("limit", pageSize.Value);
+            if (limit.HasValue)
+                request.AddParameter("limit", limit.Value);
         }
         public static void ApplyFilterToRequest(RestRequest request, List<Filter> filters)
         {
@@ -34,11 +34,11 @@ namespace LotrSDK.Helpers
         }
 
         // Gets a collection using provided filters from the endpoint 
-        public static async Task<List<T>> GetMultiFromApiByFilters<T>(LotrClient client, RestRequest request, List<Filter> filters, int? page=null, int? offset= null, int? pageSize = null)
+        public static async Task<List<T>> GetMultiFromApiByFilters<T>(LotrClient client, RestRequest request, List<Filter> filters, int? page=null, int? offset= null, int? limit = null)
         {
             var result = new List<T>();    
             ApplyFilterToRequest(request, filters);
-            ApplyPaginationParamsToRequest(request,page,offset,pageSize);
+            ApplyPaginationParamsToRequest(request,page,offset,limit);
 
             var httpResult = await client.RestClient.GetAsync<ApiResponse>(request);
             // todo there must be an easier way to do this
