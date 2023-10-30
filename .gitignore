@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/LotrSDK/.vs/LotrSDK/DesignTimeBuild
+/LotrSDK/LotrSDK/obj
+/LotrSDK/LotrSDK/bin/Debug/net6.0
+/LotrSDK/LotrSDKTests/bin/Debug/net6.0
+/LotrSDK/LotrSDKTests/obj
+/LotrSDK/.vs/LotrSDK/FileContentIndex
+/LotrSDK/.vs/LotrSDK/v17
+/LotrSDK/.vs/ProjectEvaluation
+/LotrSDK/.vs/LotrSDK/config
+/.vs
+/LotrSDK/LotrSDKTests/TestResults

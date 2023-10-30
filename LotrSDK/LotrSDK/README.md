@@ -1,6 +1,8 @@
-# Lord of the Rings C# SDK
+# Lord of the Rings C# SDK Using RestSharp Library
 
-This C# SDK  allows to consume Lord of the Rings API endpoints easily, which are  available on https://the-one-api.dev/documentation. It supports retrieving Movie and Quote data both  individually and as a list, the results are converted to type safe C# models. Some form of filtering is also supported as described below. 
+This C# SDK  allows to consume Lord of the Rings API endpoints easily, which are  available on https://the-one-api.dev/documentation. The current implementation supports retrieving of Movie and Quote
+objects as collection or  individually,  the results are converted to type safe C# models listed under Model folder. 
+Some form of filtering is also supported as described below. 
  In this version the below endpoints are implemented:
 
 | Endpoint | Description| Corresponding SDK Method| 
@@ -30,10 +32,18 @@ For the endpoints that takes <code>`List<Filter>`</code> as parameter, you can c
       ..
   }
   </code>
-  The SDK is created using Visual Studio. The solution file is  LotrSDK/LotrSDK.sln which opens both the SDK project(a class library named as "LotrSDK") and Unit Test Project. To use the SDK you need to  reference the LotrSDK class library. The Unit Test Project("LotrSDKClientTests") references it and contains unit tests for the methods of the SDK project and 
+  The SDK is created using Visual Studio. The solution file is  LotrSDK/LotrSDK.sln which opens both the SDK project(a class library named as "LotrSDK") and Integration Test Project.
+  To use the SDK you need to  reference the LotrSDK class library. The Integration Test Project("LotrSDKClientTests") references it and contains the tests for the methods of 
+  the SDK project . 
 
+ ## Instructions:
 
-TODO LIST: 
+1. Create an account on  https://the-one-api.dev/sign-up 
+2. Clone this repo in your pc
+3. Open the solution file (Preferably with Visual Studio) 
+4. Add your bearer token on  line 81 in the .runsettings file under LotrSDKTests project
+5. Run Unit tests
 
-- Unit Tests are not mocked and not complete
-- Code needs to be refactored
+## TODO LIST: 
+1. Only 5 endpoints are covered so far
+2. More Tests need to be added

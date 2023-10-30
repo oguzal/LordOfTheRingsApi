@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LotrSDK", "LotrSDK\LotrSDK.csproj", "{23FDA2F6-5F46-46E1-AD6B-2E910D4A09E9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LotrSDKTests", "LotrSDKTests\LotrSDKTests.csproj", "{ECFD12D8-B172-4A2A-ADBE-9134606DE391}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23FDA2F6-5F46-46E1-AD6B-2E910D4A09E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23FDA2F6-5F46-46E1-AD6B-2E910D4A09E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23FDA2F6-5F46-46E1-AD6B-2E910D4A09E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23FDA2F6-5F46-46E1-AD6B-2E910D4A09E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECFD12D8-B172-4A2A-ADBE-9134606DE391}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECFD12D8-B172-4A2A-ADBE-9134606DE391}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECFD12D8-B172-4A2A-ADBE-9134606DE391}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECFD12D8-B172-4A2A-ADBE-9134606DE391}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E662AEDC-2320-433B-BE41-80A470B04FE8}
+	EndGlobalSection
+EndGlobal
