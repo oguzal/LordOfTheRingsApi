@@ -1,15 +1,17 @@
-# Lord of the Rings C# SDK
+# Lord of the Rings C# SDK Using RestSharp Library
 
-This C# SDK  allows to consume Lord of the Rings API endpoints easily, which are  available on https://the-one-api.dev/documentation. It supports retrieving Movie and Quote data both  individually and as a list, the results are converted to type safe C# models. Some form of filtering is also supported as described below. 
+This C# SDK  allows to consume Lord of the Rings API endpoints easily, which are  available on https://the-one-api.dev/documentation. The current implementation supports retrieving of Movie and Quote
+objects as collection or  individually,  the results are converted to type safe C# models listed under Model folder. 
+Some form of filtering is also supported as described below. 
  In this version the below endpoints are implemented:
 
 | Endpoint | Description| Corresponding SDK Method| 
 -----------|------------|-------------------------|
 |/quote         | List of all movie quotes  | `public async Task<List<MovieQuote>> GetQuotes(List<Filter> filters) `|                         |
 |/quote/{id}    | Request one specific movie quote | `public async Task<MovieQuote> GetQuote(string Id)`        |        
-|/movie         | List of all movies, including the "The Lord of the Rings" and the "The Hobbit" trilogies |  `public async Task<List<Movie>> GetMovies(List<Filter> filters) `|
-|/movie/{id}    | Request one specific movie | `public async Task<Movie> GetMovie(string Id)`     | 
-|/movie/{id}/quote | Request all movie quotes for one specific movie (only working for the LotR trilogy) |              `public async Task<List<MovieQuote>> GetQuotesByMovie(string Id)                                                         ` |
+|/movie         | List of all movies, including the "The Lord of the Rings" and the "The Hobbit" trilogies |  ` public async Task<List<Quote>> GetQuotesByMovieId(string Id, List<Filter> filters, int? page = null, int? offset = null, int? limit = null) `|
+|/movie/{id}    | Request one specific movie | `public async Task<Movie> GetMovie(string Id)`              | 
+|/movie/{id}/quote | Request all movie quotes for one specific movie (only working for the LotR trilogy) |  ` public async Task<List<Quote>> GetQuotes(List<Filter> filters, int? page=null, int? offset=null, int? limit = null)  ` |
 
 The SDK targets .Net Standard 2.0 which supports below .Net implementations:
 
@@ -30,10 +32,18 @@ For the endpoints that takes <code>`List<Filter>`</code> as parameter, you can c
       ..
   }
   </code>
-  The SDK is created using Visual Studio. The solution file is  LotrSDK/LotrSDK.sln which opens both the SDK project(a class library named as "LotrSDK") and Unit Test Project. To use the SDK you need to  reference the LotrSDK class library. The Unit Test Project("LotrSDKClientTests") references it and contains unit tests for the methods of the SDK project and 
+  The SDK is created using Visual Studio. The solution file is  LotrSDK/LotrSDK.sln which opens both the SDK project(a class library named as "LotrSDK") and Integration Test Project.
+  To use the SDK you need to  reference the LotrSDK class library. The Integration Test Project("LotrSDKClientTests") references it and contains the tests for the methods of 
+  the SDK project . 
 
+## Instructions:
 
-TODO LIST: 
+1. Create an account on  https://the-one-api.dev/sign-up 
+2. Clone this repo in your pc
+3. Open the solution file (Preferably with Visual Studio) 
+4. Add your bearer token on  line 81 in the .runsettings file under LotrSDKTests project
+5. Run Unit tests
 
-- Unit Tests are not mocked and not complete
-- Code needs to be refactored
+## TODO LIST: 
+1. Only 5 endpoints are covered so far
+2. More Tests need to be added
