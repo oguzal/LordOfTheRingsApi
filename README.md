@@ -9,10 +9,9 @@ Some form of filtering is also supported as described below.
 -----------|------------|-------------------------|
 |/quote         | List of all movie quotes  | `public async Task<List<MovieQuote>> GetQuotes(List<Filter> filters) `|                         |
 |/quote/{id}    | Request one specific movie quote | `public async Task<MovieQuote> GetQuote(string Id)`        |        
-|/movie         | List of all movies, including the "The Lord of the Rings" and the "The Hobbit" trilogies |  `
-        public async Task<List<Quote>> GetQuotesByMovieId(string Id, List<Filter> filters, int? page = null, int? offset = null, int? limit = null) `|
-|/movie/{id}    | Request one specific movie | `public async Task<Movie> GetMovie(string Id)`     | 
-|/movie/{id}/quote | Request all movie quotes for one specific movie (only working for the LotR trilogy) |              `   public async Task<List<Quote>> GetQuotes(List<Filter> filters, int? page=null, int? offset=null, int? limit = null)  ` |
+|/movie         | List of all movies, including the "The Lord of the Rings" and the "The Hobbit" trilogies |  ` public async Task<List<Quote>> GetQuotesByMovieId(string Id, List<Filter> filters, int? page = null, int? offset = null, int? limit = null) `|
+|/movie/{id}    | Request one specific movie | `public async Task<Movie> GetMovie(string Id)`              | 
+|/movie/{id}/quote | Request all movie quotes for one specific movie (only working for the LotR trilogy) |  ` public async Task<List<Quote>> GetQuotes(List<Filter> filters, int? page=null, int? offset=null, int? limit = null)  ` |
 
 The SDK targets .Net Standard 2.0 which supports below .Net implementations:
 
