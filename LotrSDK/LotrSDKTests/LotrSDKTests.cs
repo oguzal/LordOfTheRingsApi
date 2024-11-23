@@ -15,7 +15,7 @@ namespace LotrSDK.Tests
         [TestInitialize]
         public async Task Setup()
         {
-            bearerToken = TestContext.Properties["bearerToken"].ToString();
+            bearerToken = TestContext.Properties["bearerToken"].ToString();  
             sdk = new LotrSDK(bearerToken);
         }
         #region Movies
