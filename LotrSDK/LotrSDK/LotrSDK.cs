@@ -88,5 +88,22 @@ namespace LotrSDK
 
         }
         #endregion
+
+        #region Character
+
+        public async Task<Character> GetCharacterById(string Id)
+        {
+            try
+            {
+                var request = new RestRequest("character/{id}").AddUrlSegment("id", Id);
+                return await Utils.GetOneFromApiById<Character>(client, request);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
+        #endregion
     }
 }

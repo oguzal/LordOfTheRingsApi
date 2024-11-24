@@ -1,4 +1,6 @@
-﻿using LotrSDK.Helpers;
+﻿using LotrSDK;
+using LotrSDK.Helpers;
+using LotrSDK.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
@@ -18,6 +20,7 @@ namespace LotrSDK.Tests
             bearerToken = TestContext.Properties["bearerToken"].ToString();  
             sdk = new LotrSDK(bearerToken);
         }
+
         #region Movies
         [TestMethod()]
         public async Task Get_Movie_5cd95395de30eff6ebccde5c_Equals_TheFellowshipOftheRing_Test()
@@ -77,7 +80,9 @@ namespace LotrSDK.Tests
                 new Filter("He's very fond of you.", Filter.Operator.Equal, "dialog")
             };
             var quotes = await sdk.GetQuotes(filters);
+            
             Assert.IsTrue(quotes.Any(m => m.Dialog == "He's very fond of you."));
+
         }
 
         [TestMethod()]
@@ -100,10 +105,18 @@ namespace LotrSDK.Tests
         }
 
 
+
         #endregion
 
-
-
-
+        #region Character
+        [TestMethod()]
+        public async Task GetCharacterByIdTest()
+        {
+            var character = await sdk.GetCharacterById("5cd99d4bde30eff6ebccfbdd");
+            Assert.AreEqual(character.Name, "Anárion");
+            Assert.AreEqual(character.Realm, "Gondor");
+            Assert.AreEqual(character.Race, Race.Human);
+        }
+        #endregion
     }
 }
